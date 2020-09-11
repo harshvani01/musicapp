@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ADMINISTRATION</title>
+</head>
+<body>
+<h1>ADDING NEW SONGS</h1>
+<form method="POST">
+	{% csrf_token %}
+	<input type="text" id="song_name" name="song_name" placeholder="SONG NAME"><br>
+	<input type="text" id="filename" name="filename" placeholder="FILE NAME"><br>
+
+	<select name="artist_id" id="artist_id">
+		{% for item in artist_data %}
+			<option value="{{item.id}}">{{item}}</option>
+		{% endfor %}
+	</select>
+
+	<br>
+
+	<select name="album_id" id="album_id">
+		{% for item in album_data %}
+			<option value="{{item.id}}">{{item}}</option>
+		{% endfor %}
+	</select>
+
+
+	<input type="submit"  value="ADD NEW">
+</form>
+<a href="/display_table">SHOW ALL TABLES</a><br><br>
+<a href="/admin_page">GO BACK</a>
+</body>
+</html>

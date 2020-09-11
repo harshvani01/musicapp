@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ADMISTRATION</title>
+</head>
+<body>
+<h1>ADDING NEW ARTIST</h1><br>
+<form method="POST">
+	{% csrf_token %}
+	<input type="text" id="artist_name" name="artist_name" placeholder="ARTIST NAME"><br>
+	<input type="submit"  value="ADD NEW">
+	
+</form>
+<br>
+<a href="/admin_page">GO BACK</a>
+</body>
+</html>

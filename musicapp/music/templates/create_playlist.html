@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>USER</title>
+</head>
+<body>
+	<h1>{{username}}'s NEW PLAYLIST</h1>
+	<br><br>
+
+	<form method="POST">
+		{% csrf_token %}
+		<input type="text" id="playlist_name" name="playlist_name" placeholder="PLAYLIST NAME"><br>
+		<input type="submit"  value="ADD NEW">
+	</form>
+	<a href="/user_page">GO BACK</a>
+</body>
+</html>

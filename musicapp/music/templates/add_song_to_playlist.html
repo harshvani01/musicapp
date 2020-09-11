@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>USER</title>
+</head>
+<body>
+	<h1>HI {{username}} , ADD SONGS TO YOUR PLAYLIST</h1>
+	<br><br>
+	<form method="POST">
+	{% csrf_token %}
+	<select name="playlist_id" id="playlist_id">
+		{% for item in playlist_data %}
+			<option value="{{item.id}}">{{item}}</option>
+		{% endfor %}
+	</select>
+
+	<br>
+
+	<select name="song_id" id="song_id">
+		{% for item in song_data %}
+			<option value="{{item.id}}">{{item}}</option>
+		{% endfor %}
+	</select>
+
+
+	<input type="submit"  value="ADD NEW">
+</form>
+
+
+	<a href="/user_page">GO BACK</a>
+</body>
+</html>

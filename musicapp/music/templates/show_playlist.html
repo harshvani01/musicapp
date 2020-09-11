@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>USER</title>
+</head>
+<body>
+
+	<h1>{{username}}'s PLAYLISTS</h1>
+
+	<br><br>
+	<a href="/user_page">GO BACK</a>
+	{% for item in user_playlist_data %}
+	<br>{{item}}
+	{% endfor %}
+
+	<form method="POST">
+		{% csrf_token %}
+		<select name="playlist_id" id="playlist_id">
+			{% for item in user_playlist_data %}
+				<option value="{{item.id}}">{{item}}</option>
+			{% endfor %}
+		</select>
+
+		<br>
+
+
+		<input type="submit"  value="SHOW">
+	</form>
+	{% for item in songs %}
+	<br>{{item.song_id}}
+	{% endfor %}
+</body>
+</html>

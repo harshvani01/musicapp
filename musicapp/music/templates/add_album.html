@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ADMINISTRATION</title>
+</head>
+<body>
+<h1>ADDING NEW ALBUM</h1>
+<form method="POST">
+	{% csrf_token %}
+	<input type="text" id="album_name" name="album_name" placeholder="ALBUM NAME"><br>
+	
+
+	<select name="artist_id" id="artist_id">
+		{% for item in artist_data %}
+			<option value="{{item.id}}">{{item}}</option>
+		{% endfor %}
+	</select>
+
+	<br>
+
+
+	<input type="submit"  value="ADD NEW">
+</form>
+<a href="/display_table">SHOW ALL TABLES</a><br><br>
+<a href="/admin_page">GO BACK</a>
+</body>
+</html>

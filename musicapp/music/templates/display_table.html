@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ADMINISTRATION</title>
+</head>
+<body>
+<h1>DISPLAYING TABLES</h1><br>
+<form method="POST">
+	{% csrf_token %}
+	<button name="table_name" type="submit" value="Artists">ARTISTS</button>
+	<button name="table_name" type="submit" value="Albums">ALBUMS</button>
+	<button name="table_name" type="submit" value="Songs">SONGS</button>
+	
+</form>
+<br><br>
+<a href="/admin_page">GO BACK</a><br><br>
+</body>
+
+{% for item in query_result %}
+{{item.id}}
+{{item}}<br>
+{% endfor %}
+</html>
